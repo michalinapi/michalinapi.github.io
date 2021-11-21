@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#game {
+    width: 500px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+#gameover {
+    padding-left: 10px;
+    font-family: monospace;
+    width: 200px;
+    height: 100px;
+    background-color: blue;
+    color: white;
+    display: none;
+    align-items: center;
+    position: relative;
+    left: 100px;
+}
+
+#character {
+    width: 30px;
+    height: 50px;
+    background-color: red;
+    position: relative;
+    top: 150px;
+    background-image: url('dorameon.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.animate {
+    animation: jump 500ms;
+}
+
+
+@keyframes jump {
+    0%{top: 150px;}
+    30%{top: 100px;}
+    70%{top: 100px;}
+    100%{top: 150px;}
+}
+
+#block {
+    width: 20px;
+    height: 20px;
+    /* background-color: blue; */
+    background-image: url('cucumber.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+    left: 480px;
+    top: 130px;
+}
+
+.jump-cat{
+    width: 100px;
+    height: 100px;
+}
+
+.block-move {
+    animation: block 1.5s infinite ease-in-out;
+}
+
+@keyframes block {
+    0%{left: 480px;}
+    100%{left: -40px;}
+}
+
+#score {
+    height: 100px;
+    width: 100px;
+    margin: 20px;
+    font-size: 200%;
+}
+
+.my-btn {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    margin-left: 20px;
+    border-radius: 20%;
+    border-color: rgb(216, 39, 252);
+}

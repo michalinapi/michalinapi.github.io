@@ -1,0 +1,49 @@
+body {
+    padding: 150px;
+    background-color: #f6f6f6;
+}
+
+#cat {
+    position: relative;
+}
+
+.animate {
+    animation: jump 500ms;
+}
+
+
+@keyframes jump {
+    0%{top: 0px;}
+    30%{top: -100px;}
+    70%{top: -100px;}
+    100%{top: 0px;}
+}
+
+
+
+.move {
+    animation: move 500ms;
+}
+
+
+@keyframes move {
+    0%{left: 0px;}
+    50%{left: 100px;}
+    100%{left: 0px;}
+}
+
+
+/* transform: rotate(45deg); */
+
+.flip {
+    animation: flip 500ms;
+}
+@keyframes flip {
+    0% { -webkit-transform: rotate(0deg); }
+    20% { -webkit-transform: rotate(-90deg); }
+    40% { -webkit-transform: rotate(-180deg); }
+    80% { -webkit-transform: rotate(-270deg); }
+    100% { -webkit-transform: rotate(-360deg); }
+    
+  }
+  

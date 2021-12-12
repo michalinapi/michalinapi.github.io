@@ -1,10 +1,12 @@
 
 const game = document.getElementById("game");
+const score = document.getElementById("score");
+
 let direction = {x: 1, y: 0};
 
 let lastDirection = "ArrowRight"
 
-const SNAKE_SPEED = 5
+const SNAKE_SPEED = 10
 var lastTime = 0
 
 var snake = [
@@ -69,7 +71,7 @@ function drawSnake() {
 
     // check if the snake bites itself.
     for (let i = 1; i < snake.length; i++) {
-        if (snake[0].x === snake[i].x && snake[0].y === snake[1].y) {
+        if (snake[0].x === snake[i].x && snake[0].y === snake[i].y) {
             alert("You lose, Click OK to try again.")
             snake = [{x: 10, y: 10}] 
         }
@@ -86,14 +88,20 @@ function drawSnake() {
         alert("You lose, Click OK to try again.")
         snake = [{x: 10, y: 10}]
     } else {
-        snake.forEach(s => {
+        snake.forEach((s, i) => {
             const div = document.createElement("div");
             div.style.gridColumnStart = s.x;
             div.style.gridRowStart = s.y;
             div.classList.add('snake');
+
+            if (i === 0) {
+                div.classList.add("snake-head");
+            }
     
             game.appendChild(div)
         })
+
+        score.innerHTML = snake.length;
     }
 }
 
